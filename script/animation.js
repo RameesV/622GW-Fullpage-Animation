@@ -1,15 +1,38 @@
 /*
+ * Initialize some useful methods from fullpage plugin
+ */
+var $ = fp_utils.$,
+addClass = fp_utils.addClass,
+removeClass = fp_utils.removeClass;
+
+
+/*
+ * declare some dom variables
+ */
+const canvas = $("#anican")[0];
+const context = canvas.getContext("2d");
+const img = new Image();
+
+
+/*
  * Preload all images
  */
 
 // get image url for the section with frame index
-const getImageUrl = (section, index) =>
-    section <= 0
-        ? `./assets/images/Sequence_01/sh_010.00001.png`
-        : `./assets/images/Sequence_${section.toString().padStart(2, "0")}/sh_${section
-            .toString()
-            .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
-
+const getImageUrl = (section, index) =>{
+    if (section <= 0 || section == 4){
+      return `./assets/images/Sequence_01/sh_010.00001.png`;
+    }
+    if(section > 4){
+      section = section-1;
+    }
+    
+    return `./assets/images/Sequence_${section.toString().padStart(2, "0")}/sh_${section
+      .toString()
+      .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
+  
+  }
+  
 // Preload the images
 for (let s = 1; s <= 4; s++) {
     for (let i = 1; i <= 30; i++) {
@@ -25,6 +48,7 @@ const updateCanvas = () => {
   const width = window.innerWidth;
   canvas.width = width
   canvas.height = width * (9 / 16);
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
   const availablePadding = window.innerHeight - canvas.height
 
@@ -35,19 +59,6 @@ const updateCanvas = () => {
 
 updateCanvas()
 
-/*
- * Initialize some useful methods from fullpage plugin
- */
- var $ = fp_utils.$,
-    addClass = fp_utils.addClass,
-    removeClass = fp_utils.removeClass;
-
-/*
- * declare some dom variables
- */
-const canvas = $("#anican")[0];
-const context = canvas.getContext("2d");
-const img = new Image();
 
 /*
 * make the canvas fit to image aspect ratio 
@@ -110,6 +121,7 @@ new fullpage("#fullpage", {
     touchWrapper: document,
     sectionsColor: ["#492432","blue","red","green","#f38294","#492432","blue","red","green","#f38294",],
     scrollingSpeed: scrollingSpeed,
+    easingcss3: "steps(2, jump-none)",
     onLeave: (origin, destination, direction) => {
         animateInterSection(origin.index, destination.index, direction);
 
@@ -118,7 +130,7 @@ new fullpage("#fullpage", {
 
         const animateFromLeft = [
             {
-                x: "0",
+                x: "100",
                 opacity: 0,
             },
             {
@@ -157,7 +169,7 @@ new fullpage("#fullpage", {
             },
         ];
         const tl = new TimelineMax({
-            delay: scrollingSpeed / 1000 ,
+            delay: scrollingSpeed / 2000 ,
         });
         tl.fromTo(rightHalfDestination, 1, ...animateFromRight)
             .fromTo(leftHalfDestination, 1, ...animateFromLeft);
