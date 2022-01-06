@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.0/css/foundation.min.css"
+        integrity="sha512-pVeuW4GxpQBzt9coQEhGAj5//MWDsAdQNNy2GvkH81LFnDhL1x5TlVix1w6QHpRzd/uw2pKgi5qA6PJ3Zl3pAA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Animation Using Fullpage JS</title>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section what " id="section0">
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half " id="leftHalf">
+                </div>
+                <div class="large-6 medium-6 columns w-half " id="rightHalf">
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half section1ColumnLeft" id="leftHalf">
+                </div>
+                <div class="large-6 medium-6 columns w-half section1ColumnRight" id="rightHalf"
+                    style="font-size: 5rem; text-align: left;">
+                    <h1 class="section1-text">
+                        All eyes <br> on the <br> road
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="row bottom-div">
+                <h2 class="bottom-text">Always-on safety</h2>
+            </div>
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half section2ColumnLeft" id="leftHalf">
+                    <div class="icon-div">
+                        <img class="icon1" src="./assets/icons/icon 1.png" alt="">
+                        <h3 class="cardHead">Big on protection</h3>
+                    </div>
+                    <div>
+                        <h2 class="cardContent" style="margin-bottom: 15px;">Stay visible on the grid</h2>
+                    </div>
+                    <div>
+                        <p class="div-content">
+                            Precise location sharing enabled by what3words <br> tells the emergency services exactly
+                            where you <br>
+                            are – even if you aren’t sure.
+                        </p>
+                    </div>
+                </div>
+                <div class="large-6 medium-6 columns w-half section2ColumnRight" id="rightHalf">
+                    Right section
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half section3ColumnLeft" id="leftHalf">
+                    Left section
+                </div>
+                <div class="large-6 medium-6 columns w-half section3ColumnRight" id="rightHalf">
+                    Right section
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section4">
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half section4ColumnLeft" id="leftHalf">
+                    Left section
+                </div>
+                <div class="large-6 medium-6 columns w-half section4ColumnRight" id="rightHalf">
+                    Right section
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section5">
+            <div class="row">
+                <div class="large-6 medium-6 columns w-half section5ColumnLeft" id="leftHalf">
+                    Left section
+                </div>
+                <div class="large-6 medium-6 columns w-half section5ColumnRight" id="rightHalf">
+                    Right section
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixedWrapper fp-table">
+        <div class="fp-tableCell" style="display: none;">
+            <div class="row">
+                <div class="w-half" id="leftHalf">
+                    this is left
+                </div>
+                <div class="w-half" id="rightHalf">
+                    All eyes on the road
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="fixedWrapper fp-table">
+        <div class="fp-tableCell">
+            <canvas id="anican">
+            </canvas>
+        </div>
+    </div> -->
+
+
+    <div class="fixedWrapper">
+        <canvas id="anican">
+        </canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.0.0/js/foundation.min.js"
+        integrity="sha512-Z/+KrKwu8/OaOvNp032BfmvlNDTOanmV4qkWiBQnElfp2G4V78V100MKTcVXcY2UAiP/jL8K1K6xpmOcvLLUsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"
+        integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script/fullpage.js"></script>
+    <script type="text/javascript" src="./script/animation.js"></script>
+
+
+
+</body>
+
+</html>

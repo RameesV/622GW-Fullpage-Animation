@@ -1,0 +1,121 @@
+body {
+    margin: 0px;
+    /* background-color: black; */
+  }
+  .section{
+      height: 80vh;
+      width: 50%;
+  }
+  
+  .fp-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .fp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  .row {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 5em;
+    color: white;
+    display: flex;
+  }
+  
+  .w-half {
+    align-self: center;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .h-half {
+    height: 50%;
+  }
+  
+  .h-full {
+    height: 100%;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+
+  
+  .fixedWrapper {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    /* background-color: #fff2; */
+  }
+/* canvas{
+  background-color: #ffff0088;
+  width: 100%;
+  aspect-ratio: 1920 / 1080;
+} */
+.row{
+  margin-right: 0;
+  margin-left: 0;
+  max-width: 100% !important;
+
+}
+.section1ColumnRight{
+  padding-left: 10px;
+}
+.section1-text{
+margin-left: 20%;
+font-size: 6rem;
+font-weight: 700;
+color: #fff;
+}
+
+.bottom-text{
+  
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+}
+.bottom-div{
+  text-align: center;
+  justify-content: center;
+  margin-top: -15% !important;
+  position: fixed;
+}
+
+.icon-div {
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.cardHead{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  
+}
+.cardContent{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.div-content{
+  font-size: 1rem;
+}
