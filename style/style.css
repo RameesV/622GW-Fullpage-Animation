@@ -20,7 +20,7 @@ body {
   }
   
   .row {
-    text-align: center;
+    /* text-align: center; */
     font-family: "Source Sans Pro", sans-serif;
     font-size: 5em;
     color: white;
@@ -86,7 +86,6 @@ color: #fff;
 }
 
 .bottom-text{
-  
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
@@ -97,28 +96,66 @@ color: #fff;
   margin-top: -15% !important;
   position: fixed;
 }
+.section2ColumnLeft{
+  margin-left: 10%;
+}
 
+
+/* ************section 3 ***************/
+.section3row{
+  display: flex;
+}
+.section3ColumnLeft{
+  display: table-cell;
+  align-self: normal;
+}
+.section3ColumnRight{
+  align-self: normal;
+  justify-content: space-around;
+}
 .icon-div {
+  width: 100%;
   display: inline-flex;
-  font-size: 2rem;
   font-weight: bold;
   color: #fff;
 }
 .cardHead{
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  margin-top: 4%;
+  margin-left: 1%;
   font-weight: bold;
-  color: #fff;
-  
+  color: #fff; 
+}
+.icon1{
+  width: 55px;
+  height: 55px;
 }
 .cardContent{
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: bold;
   color: #fff;
 }
-
+span{
+  color: #0095EF;
+}
 .div-content{
   font-size: 1rem;
 }
 .imageCard{
-border-radius: 10%;
+  border-radius: 25px;
+}
+
+.section3Card{
+  word-break: break-word;
+  width: 100%;
+  /* background-image: url("/assets/pictures/card.png"); */
+  background-color: #000;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.section3CardHead{
+  padding-bottom: 20px;
+font-weight: 100;
+color: #fff;
 }

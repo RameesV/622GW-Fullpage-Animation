@@ -171,7 +171,7 @@ new fullpage("#fullpage", {
         const tl = new TimelineMax({
             delay: scrollingSpeed / 1000,
         });
-        tl.fromTo(rightHalfDestination, 0.5, ...animateFromRight)
-            .fromTo(leftHalfDestination, 0.5, ...animateFromLeft)
+        tl.fromTo(rightHalfDestination, 0.2, ...animateFromRight)
+            .fromTo(leftHalfDestination, 0.2, ...animateFromLeft)
     },
 });
