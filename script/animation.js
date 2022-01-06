@@ -104,7 +104,7 @@ const getImageUrl = (section, index) =>{
     touchWrapper: document,
     sectionsColor:['#52afef','#349234','red','blue','green','cyan','magenta','#52afef','#349234','red','blue','green','cyan','magenta','#52afef','#349234','red','blue','green','cyan','magenta',],
     scrollingSpeed: scrollingSpeed,
-    easingcss3: "steps(2, jump-none)",
+    // easingcss3: "steps(2, jump-none)",
     onLeave: (origin, destination, direction) => {
       animateInterSection(origin.index, destination.index, direction);
   
