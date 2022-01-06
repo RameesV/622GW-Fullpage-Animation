@@ -17,6 +17,23 @@ for (let s = 1; s <= 4; s++) {
         img.src = getImageUrl(s, i);
     }
 }
+/*
+ * Update the canvas
+ */
+window.addEventListener("resize", () => updateCanvas());
+const updateCanvas = () => {
+  const width = window.innerWidth;
+  canvas.width = width
+  canvas.height = width * (9 / 16);
+
+  const availablePadding = window.innerHeight - canvas.height
+
+  canvas.style.marginTop = (availablePadding / 2) + "px";
+  canvas.style.marginBottom = (availablePadding / 2) + "px";
+
+}
+
+updateCanvas()
 
 /*
  * Initialize some useful methods from fullpage plugin
