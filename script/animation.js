@@ -3,18 +3,18 @@
  */
 
 // get image url for the section with frame index
-const getImageUrl = (section, index) =>{
-  if(section <= 0 || section == 4 ) return `./assets/images/Sequence_01/sh_010.00001.png`;
-  if(section>4) section = section - 1
+const getImageUrl = (section, index) => {
+  if (section <= 0 || section == 4) return `./assets/images/Sequence_01/sh_010.00001.png`;
+  if (section > 4) section = section - 1
 
   return `./assets/images/Sequence_${section.toString().padStart(2, "0")}/sh_${section
-      .toString()
-      .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
+    .toString()
+    .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
 }
 
 
 // Preload the images
-for (let s = 1; s <= 7; s++) {
+for (let s = 1; s <= 5; s++) {
   for (let i = 1; i <= 30; i++) {
     const img = new Image();
     img.src = getImageUrl(s, i);
@@ -45,7 +45,7 @@ const updateCanvas = () => {
   canvas.width = width
   canvas.height = width * (9 / 16);
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
-  
+
   const availablePadding = window.innerHeight - canvas.height
 
   canvas.style.marginTop = (availablePadding / 2) + "px";
@@ -102,7 +102,7 @@ function animateInterSection(originIndex, destinationIndex, direction) {
  */
 new fullpage("#fullpage", {
   touchWrapper: document,
-  sectionsColor:['#52afef','#349234','red','blue','green','cyan','magenta','#52afef','#349234','red','blue','green','cyan','magenta','#52afef','#349234','red','blue','green','cyan','magenta',],
+  sectionsColor: ['#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta',],
   scrollingSpeed: scrollingSpeed,
   easingcss3: "steps(2, jump-none)",
   onLeave: (origin, destination, direction) => {
@@ -116,12 +116,12 @@ new fullpage("#fullpage", {
 
     var duration = scrollingSpeed / 1000 / 2;
     var tl = gsap.timeline();
-    tl.fromTo(rightHalfOrigin, {opacity: 1}, {x:"100",opacity: 0, duration: duration});
-    tl.fromTo(rightHalfDestination, {x:"100",opacity: 0}, {x:"0",opacity: 1, duration: duration});
+    tl.fromTo(rightHalfOrigin, { opacity: 1 }, { x: "100", opacity: 0, duration: duration });
+    tl.fromTo(rightHalfDestination, { x: "100", opacity: 0 }, { x: "0", opacity: 1, duration: duration });
 
     var tr = gsap.timeline();
-    tr.fromTo(leftHalfOrigin, {opacity: 1}, {x:"-100",opacity: 0, duration: duration});
-    tr.fromTo(leftHalfDestination, {x:"-100",opacity: 0}, {x:"0",opacity: 1, duration: duration});
+    tr.fromTo(leftHalfOrigin, { opacity: 1 }, { x: "-100", opacity: 0, duration: duration });
+    tr.fromTo(leftHalfDestination, { x: "-100", opacity: 0 }, { x: "0", opacity: 1, duration: duration });
     // content animation ends here
 
   },
