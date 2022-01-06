@@ -2,8 +2,8 @@
  * Initialize some useful methods from fullpage plugin
  */
 var $ = fp_utils.$,
-addClass = fp_utils.addClass,
-removeClass = fp_utils.removeClass;
+    addClass = fp_utils.addClass,
+    removeClass = fp_utils.removeClass;
 
 
 /*
@@ -19,20 +19,20 @@ const img = new Image();
  */
 
 // get image url for the section with frame index
-const getImageUrl = (section, index) =>{
-    if (section <= 0 || section == 4){
-      return `./assets/images/Sequence_01/sh_010.00001.png`;
+const getImageUrl = (section, index) => {
+    if (section <= 0 || section == 4) {
+        return `./assets/images/Sequence_01/sh_010.00001.png`;
     }
-    if(section > 4){
-      section = section-1;
+    if (section > 4) {
+        section = section - 1;
     }
-    
+
     return `./assets/images/Sequence_${section.toString().padStart(2, "0")}/sh_${section
-      .toString()
-      .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
-  
-  }
-  
+        .toString()
+        .padStart(2, "0")}0.${index.toString().padStart(5, "0")}.png`;
+
+}
+
 // Preload the images
 for (let s = 1; s <= 4; s++) {
     for (let i = 1; i <= 30; i++) {
@@ -45,15 +45,15 @@ for (let s = 1; s <= 4; s++) {
  */
 window.addEventListener("resize", () => updateCanvas());
 const updateCanvas = () => {
-  const width = window.innerWidth;
-  canvas.width = width
-  canvas.height = width * (9 / 16);
-  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const width = window.innerWidth;
+    canvas.width = width
+    canvas.height = width * (9 / 16);
+    context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-  const availablePadding = window.innerHeight - canvas.height
+    const availablePadding = window.innerHeight - canvas.height
 
-  canvas.style.marginTop = (availablePadding / 2) + "px";
-  canvas.style.marginBottom = (availablePadding / 2) + "px";
+    canvas.style.marginTop = (availablePadding / 2) + "px";
+    canvas.style.marginBottom = (availablePadding / 2) + "px";
 
 }
 
@@ -63,14 +63,14 @@ updateCanvas()
 /*
 * make the canvas fit to image aspect ratio 
 * this can be even solved using 'aspect-ratio' css property
-*/          
+*/
 const width = window.innerWidth;
 canvas.width = width
-canvas.height =  width * (1080/1920) ; // find the required height from the original aspect ratio
+canvas.height = width * (1080 / 1920); // find the required height from the original aspect ratio
 // find the difference between canvas height and screen height
-const availablePadding  = window.innerHeight - canvas.height
-canvas.style.marginTop = (availablePadding/2)+"px";
-canvas.style.marginBottom = (availablePadding/2)+"px";
+const availablePadding = window.innerHeight - canvas.height
+canvas.style.marginTop = (availablePadding / 2) + "px";
+canvas.style.marginBottom = (availablePadding / 2) + "px";
 
 img.onload = function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -119,7 +119,7 @@ function animateInterSection(originIndex, destinationIndex, direction) {
  */
 new fullpage("#fullpage", {
     touchWrapper: document,
-    sectionsColor: ["#492432","blue","red","green","#f38294","#492432","blue","red","green","#f38294",],
+    sectionsColor: ["#492432", "blue", "red", "green", "#f38294", "#492432", "blue", "red", "green", "#f38294",],
     scrollingSpeed: scrollingSpeed,
     // easingcss3: "steps(2, jump-none)",
     onLeave: (origin, destination, direction) => {
@@ -150,7 +150,7 @@ new fullpage("#fullpage", {
         ];
         const animateFromBottom = [
             {
-                y: "0",
+                y: "50",
                 opacity: 0,
             },
             {
@@ -158,20 +158,20 @@ new fullpage("#fullpage", {
                 opacity: 0,
             },
         ];
-        // const animateFromTop = [
-        //     {
-        //         y: "0",
-        //         opacity: 0,
-        //     },
-        //     {
-        //         y: 0,
-        //         opacity: 0,
-        //     },
-        // ];
+        const animateFromTop = [
+            {
+                y: "-50",
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 0,
+            },
+        ];
         const tl = new TimelineMax({
-            delay: scrollingSpeed / 1000 ,
+            delay: scrollingSpeed / 1000,
         });
-        tl.fromTo(rightHalfDestination, 1, ...animateFromRight)
-            .fromTo(leftHalfDestination, 1, ...animateFromLeft);
+        tl.fromTo(rightHalfDestination, 0.5, ...animateFromRight)
+            .fromTo(leftHalfDestination, 0.5, ...animateFromLeft)
     },
 });
