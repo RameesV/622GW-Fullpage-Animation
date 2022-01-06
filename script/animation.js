@@ -121,7 +121,7 @@ new fullpage("#fullpage", {
     touchWrapper: document,
     sectionsColor: ["#492432","blue","red","green","#f38294","#492432","blue","red","green","#f38294",],
     scrollingSpeed: scrollingSpeed,
-    easingcss3: "steps(2, jump-none)",
+    // easingcss3: "steps(2, jump-none)",
     onLeave: (origin, destination, direction) => {
         animateInterSection(origin.index, destination.index, direction);
 
@@ -130,7 +130,7 @@ new fullpage("#fullpage", {
 
         const animateFromLeft = [
             {
-                x: "100",
+                x: "-100",
                 opacity: 0,
             },
             {
@@ -140,7 +140,7 @@ new fullpage("#fullpage", {
         ];
         const animateFromRight = [
             {
-                x: "-100",
+                x: "100",
                 opacity: 0,
             },
             {
@@ -158,18 +158,18 @@ new fullpage("#fullpage", {
                 opacity: 0,
             },
         ];
-        const animateFromTop = [
-            {
-                y: "0",
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 0,
-            },
-        ];
+        // const animateFromTop = [
+        //     {
+        //         y: "0",
+        //         opacity: 0,
+        //     },
+        //     {
+        //         y: 0,
+        //         opacity: 0,
+        //     },
+        // ];
         const tl = new TimelineMax({
-            delay: scrollingSpeed / 2000 ,
+            delay: scrollingSpeed / 1000 ,
         });
         tl.fromTo(rightHalfDestination, 1, ...animateFromRight)
             .fromTo(leftHalfDestination, 1, ...animateFromLeft);
