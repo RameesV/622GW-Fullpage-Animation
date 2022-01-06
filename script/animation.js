@@ -140,7 +140,7 @@ new fullpage("#fullpage", {
         ];
         const animateFromRight = [
             {
-                x: "0",
+                x: "-100",
                 opacity: 0,
             },
             {
