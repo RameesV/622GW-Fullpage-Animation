@@ -102,7 +102,7 @@ function animateInterSection(originIndex, destinationIndex, direction) {
  */
 new fullpage("#fullpage", {
   touchWrapper: document,
-  sectionsColor: ['#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta',],
+  // sectionsColor: ['#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta',],
   scrollingSpeed: scrollingSpeed,
   // easingcss3: "steps(2, jump-none)",
   onLeave: (origin, destination, direction) => {
