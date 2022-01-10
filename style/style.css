@@ -49,9 +49,6 @@ body {
   .text-left {
     text-align: left;
   }
-  
-
-  
   .fixedWrapper {
     z-index: 100;
     position: fixed;
