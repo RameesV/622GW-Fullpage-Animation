@@ -102,17 +102,19 @@ function animateInterSection(originIndex, destinationIndex, direction) {
  */
 new fullpage("#fullpage", {
   touchWrapper: document,
-  // sectionsColor: ['#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta', '#52afef', '#349234', 'red', 'blue', 'green', 'cyan', 'magenta',],
+  // sectionsColor: [ 'red', 'blue', 'green', 'cyan', 'magenta',],
   scrollingSpeed: scrollingSpeed,
-  // easingcss3: "steps(2, jump-none)",
+  easingcss3: "steps(2, jump-none)",
   onLeave: (origin, destination, direction) => {
-    animateInterSection(origin.index, destination.index, direction);
+  animateInterSection(origin.index, destination.index, direction);
 
     // Animate the content
     const leftHalfOrigin = $("#leftHalf", origin.item)[0];
     const rightHalfOrigin = $("#rightHalf", origin.item)[0];
+    const bottomOrigin = $("#bottom-div", origin.item)[0];
     const leftHalfDestination = $("#leftHalf", destination.item)[0];
     const rightHalfDestination = $("#rightHalf", destination.item)[0];
+    const bottomDestination = $("#bottom-div", destination.item)[0];
 
     var duration = scrollingSpeed / 1000 / 2;
     var tl = gsap.timeline();
@@ -122,6 +124,11 @@ new fullpage("#fullpage", {
     var tr = gsap.timeline();
     tr.fromTo(leftHalfOrigin, { opacity: 1 }, { x: "-100", opacity: 0, duration: duration });
     tr.fromTo(leftHalfDestination, { x: "-100", opacity: 0 }, { x: "0", opacity: 1, duration: duration });
+    
+    var tb = gsap.timeline();
+    tb.fromTo(bottomOrigin, { opacity: 1 }, { y:"-100", opacity: 0, duration: duration});
+    tb.fromTo(bottomDestination, { y: "500", opacity: 0 }, { y: "0", opacity: 1, duration: duration });
+
     // content animation ends here
 
   },
